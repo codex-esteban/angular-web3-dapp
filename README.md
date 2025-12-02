@@ -34,7 +34,7 @@ A robust, reactive Angular Decentralized Application (dApp) that integrates Meta
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/AARONFELIXESTEBAN/angular-web3-dapp.git
+    git clone https://github.com/codex-esteban/angular-web3-dapp.git
     cd your-repo-name
     ```
 
