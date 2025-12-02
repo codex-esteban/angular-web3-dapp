@@ -1,0 +1,348 @@
+.wallet-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.wallet-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wallet-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 32px;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  animation: fadeIn 0.3s ease;
+}
+
+.alert-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+.alert-success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.connect-section {
+  text-align: center;
+}
+
+.description {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+  margin-top: 16px;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.info-box {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.info-text {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.connected-section {
+  animation: fadeIn 0.5s ease;
+}
+
+.wallet-info {
+  background-color: #f9fafb;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.info-row {
+  margin-bottom: 20px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.address-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.address-code {
+  background-color: #1f2937;
+  color: #10b981;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.btn-copy {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-copy:hover {
+  background-color: #5568d3;
+  transform: scale(1.1);
+}
+
+.full-address {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #9ca3af;
+  word-break: break-all;
+}
+
+.balance-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.balance-amount {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.network-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.chain-id {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #d1fae5;
+  border-radius: 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status-text {
+  font-weight: 600;
+  color: #065f46;
+  font-size: 14px;
+}
+
+.instructions {
+  margin-top: 24px;
+  padding: 20px;
+  background-color: #eff6ff;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.instructions h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1e40af;
+  font-size: 16px;
+}
+
+.instructions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.instructions li {
+  color: #1e40af;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .wallet-card {
+    padding: 24px;
+  }
+
+  .wallet-title {
+    font-size: 24px;
+  }
+
+  .address-code {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .balance-amount {
+    font-size: 20px;
+  }
+}

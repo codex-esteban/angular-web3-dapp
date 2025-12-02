@@ -1,0 +1,101 @@
+<div class="wallet-container">
+  <div class="wallet-card">
+    <h2 class="wallet-title">
+      <span class="icon">🦊</span>
+      MetaMask Wallet Integration
+    </h2>
+
+    <!-- Error/Warning Messages -->
+    <div *ngIf="errorMessage" 
+         [class]="errorMessage.includes('✓') ? 'alert alert-success' : 'alert alert-warning'">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Not Connected State -->
+    <div *ngIf="!isConnected" class="connect-section">
+      <p class="description">
+        Connect your MetaMask wallet to interact with Ethereum blockchain
+      </p>
+      
+      <button 
+        class="btn btn-primary btn-lg"
+        (click)="connectWallet()"
+        [disabled]="isLoading">
+        <span *ngIf="!isLoading">🔗 Connect Wallet</span>
+        <span *ngIf="isLoading">
+          <span class="spinner"></span> Connecting...
+        </span>
+      </button>
+
+      <div class="info-box">
+        <p class="info-text">
+          <strong>Note:</strong> Make sure MetaMask extension is installed in your browser.
+        </p>
+      </div>
+    </div>
+
+    <!-- Connected State -->
+    <div *ngIf="isConnected" class="connected-section">
+      <!-- Wallet Address Display -->
+      <div class="wallet-info">
+        <div class="info-row">
+          <label class="info-label">Wallet Address</label>
+          <div class="address-display">
+            <code class="address-code">{{ shortenedAddress }}</code>
+            <button 
+              class="btn-copy" 
+              (click)="copyAddress()"
+              title="Copy full address">
+              📋
+            </button>
+          </div>
+          <div class="full-address" title="{{ walletAddress }}">
+            Full: {{ walletAddress }}
+          </div>
+        </div>
+
+        <!-- Balance Display -->
+        <div class="info-row" *ngIf="balance">
+          <label class="info-label">Balance</label>
+          <div class="balance-display">
+            <span class="balance-amount">{{ balance }} ETH</span>
+          </div>
+        </div>
+
+        <!-- Network Display -->
+        <div class="info-row" *ngIf="network">
+          <label class="info-label">Network</label>
+          <div class="network-display">
+            <span [class]="'badge ' + getNetworkBadgeClass()">
+              {{ network.name }}
+            </span>
+            <small class="chain-id">Chain ID: {{ network.chainId }}</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connection Status -->
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Connected</span>
+      </div>
+
+      <!-- Disconnect Button -->
+      <button 
+        class="btn btn-secondary"
+        (click)="disconnectWallet()">
+        🔌 Disconnect
+      </button>
+
+      <!-- Instructions -->
+      <div class="instructions">
+        <h4>Test Features:</h4>
+        <ul>
+          <li>✅ Switch accounts in MetaMask to see address update</li>
+          <li>✅ Change network in MetaMask to see network update</li>
+          <li>✅ Try switching to unsupported networks to see warnings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
